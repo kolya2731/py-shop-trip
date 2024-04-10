@@ -15,21 +15,20 @@ class Shop:
         )
 
     def print_account(self) -> None:
-        print(f"Date: "
-              f"{datetime(2021, 4, 1, 12, 33, 41).strftime('%m/%d/%Y %T')}")
+        print(f"Date: {datetime.now().strftime('%m/%d/%Y %T')}")
         print(f"Thanks, {self.name_customer}, for your purchase!")
         print("You have bought:")
         for product, value in self.products_cart.items():
-            product_s = self.shop_products[product]
-            if product_s * value == int(product_s * value):
+            if (self.shop_products[product] * value
+                    == int(self.shop_products[product] * value)):
                 print(
                     f"{value} {product}s for "
-                    f"{int(product_s * value)} dollars"
+                    f"{int(self.shop_products[product] * value)} dollars"
                 )
                 continue
             print(
                 f"{value} {product}s for "
-                f"{product_s * value} dollars"
+                f"{self.shop_products[product] * value} dollars"
             )
         print(f"Total cost is {self.calculate_total_price()} dollars")
         print("See you again!\n")
