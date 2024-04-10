@@ -41,7 +41,8 @@ def shop_trip() -> None:
                       f"money to make a purchase in any shop")
                 continue
             customer_home_location = customer["location"]
-            print(f"{customer['name']} rides to {res[min(res)][-2]['shop_name']}\n")
+            print(f"{customer['name']} rides to "
+                  f"{res[min(res)][-2]['shop_name']}\n")
             customer["location"] = res[min(res)][-1]["shop_location"]
 
             Shop(
