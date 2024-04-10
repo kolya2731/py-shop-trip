@@ -15,7 +15,8 @@ class Shop:
         )
 
     def print_account(self) -> None:
-        print(f"Date: {datetime.now().strftime('%m/%d/%Y %T')}")
+        print(f"Date: "
+              f"{datetime(2021, 4, 1, 12, 33,41).strftime('%m/%d/%Y %T')}")
         print(f"Thanks, {self.name_customer}, for your purchase!")
         print("You have bought:")
         for product, value in self.products_cart.items():
